@@ -4,12 +4,13 @@
 
 # Site
 title: 黝黑蜗壳
-subtitle: 谢坤
+subtitle: 博士狗
 description: As long as there is tomorrow, today is always the starting line.
 author: Kun XIE
 avatar: /images/avatar.jif
 email: cnxiekun@gmail.com
 language: en
+# language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL

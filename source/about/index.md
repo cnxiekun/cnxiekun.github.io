@@ -1,7 +1,7 @@
 ---
 title: About me
 date: 2017-03-26 00::00
-comments: false
+comments:
 ---
 
 ## Basic Information

@@ -1,5 +1,5 @@
 ---
-title: about
+title: Kun XIE
 date: 2017-03-26 00::00
 comments: false
 ---
@@ -42,18 +42,10 @@ comments: false
 
 - [Machine Learning in Action](https://www.manning.com/books/machine-learning-in-action) by Alexandre Alves, Oracle Corporation
 - [Machine Learning](https://www.coursera.org/learn/machine-learning) by Andrew NG
-- [Machine Learning Foundations: A Case Study Approach](https://www.coursera.org/learn/ml-foundations) in Coursera &nbsp;
-    [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Foundations)&nbsp;&nbsp;
-    [<font color=#5bc0de>Certificate</font>](index/ML-Foundations.pdf)
-- [Machine Learning: Regression](https://www.coursera.org/learn/ml-regression) in Coursera &nbsp;
-    [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Regression)&nbsp;&nbsp;
-    [<font color=#5bc0de>Certificate</font>](index/ML-Regression.pdf)
-- [Machine Learning: Classification](https://www.coursera.org/learn/ml-classification) in Coursera &nbsp;
-    [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Classification)&nbsp;&nbsp;
-    [<font color=#5bc0de>Certificate</font>](index/ML-Classification.pdf)
-- [Machine Learning: Clustering & Retrieval](https://www.coursera.org/learn/ml-clustering-and-retrieval) in Coursera &nbsp;
-    [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-ClusteringAndRetrieval)&nbsp;&nbsp;
-    [<font color=#5bc0de>Certificate</font>](index/ML-ClusteringAndRetrieval.pdf)
+- [Machine Learning Foundations: A Case Study Approach](https://www.coursera.org/learn/ml-foundations) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Foundations)  [<font color=#5bc0de>Certificate</font>](index/ML-Foundations.pdf)
+- [Machine Learning: Regression](https://www.coursera.org/learn/ml-regression) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Regression)  [<font color=#5bc0de>Certificate</font>](index/ML-Regression.pdf)
+- [Machine Learning: Classification](https://www.coursera.org/learn/ml-classification) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Classification)  [<font color=#5bc0de>Certificate</font>](index/ML-Classification.pdf)
+- [Machine Learning: Clustering & Retrieval](https://www.coursera.org/learn/ml-clustering-and-retrieval) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-ClusteringAndRetrieval)  [<font color=#5bc0de>Certificate</font>](index/ML-ClusteringAndRetrieval.pdf)
 
 #### Teaching Assistant:
 

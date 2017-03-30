@@ -1,0 +1,266 @@
+\documentclass[letterpaper,10pt]{article}
+
+% \usepackage{amsfonts,amsthm,amssymb,amsmath,mathrsfs}
+% \usepackage{tikz}
+% \usetikzlibrary{arrows,shapes,trees}
+% \usetikzlibrary{backgrounds}
+% \usepackage{graphicx,color,hyperref,subfig}
+% \usepackage{pdfsync}
+%\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+%\usepackage[dvipdfm]{hyperref} % for generating hyperreference when compiling by LaTex instead of XeLaTex
+
+
+%-----------------------------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{bibentry}
+\usepackage{graphicx}
+
+% \usepackage{xunicode}
+% \usepackage{xltxtra}
+% \usepackage{fontspec}
+% \setmainfont{Garamond}
+
+% \usepackage[garamond]{mathdesign}
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+% \usepackage{garamond}
+
+
+% for highlighting changes
+\usepackage[normalem]{ulem}
+\newcommand{\delete}[1]{\textcolor{red}{\sout{#1}}} % delete
+\newcommand{\replace}[2]{\textcolor{red}{\sout{#1}} \textcolor{blue}{{#2}}} % replace #1 with #2
+\newcommand{\red}[1]{\textcolor{red}{#1}} % red / emphasize
+% \newcommand{\comment}[2]{\textcolor{blue}{({#1}: {#2})}} % comments
+\newcommand{\kxie}[1]{\textcolor{magenta}{{Kun: }{#1}}} % comments by Kun
+\newcommand{\purple}[1]{\textcolor{myPrince}{#1}} % purple / example
+\newcommand{\blue}[1]{\textcolor{blue}{#1}} % blue
+
+\definecolor{myBlue}{RGB}{0,51,102}
+\definecolor{myGold}{RGB}{28,122,166}
+\definecolor{myPrince}{RGB}{188,47,235}
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.30}
+
+% font of text and math
+% \usepackage{pslatex} %font: pslatex
+% \usepackage[T1]{fontenc}
+% \usepackage{textcomp}
+% \usepackage[scaled=.92]{helvet}
+% \usepackage{mathpazo}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=mygreylink     % can put red here to better visualize the links
+}
+\urlstyle{same}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.374in}
+\addtolength{\evensidemargin}{0.374in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{0in}
+\addtolength{\textheight}{0.75in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    #3 & #4 \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+
+
+\begin{document}
+
+% \newcommand{\mywebheader}{
+% \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+%     \textbf{PRESENT ADDRESS} & \textbf{PERMANENT ADDRESS} \\
+%     Room 5569, HKUST         & Room 5569, HKUST \\
+%     Clear Water Bay, KLN, HK & Clear Water Bay, KLN, HK \\
+%     \includegraphics[scale=0.025]{../../images/phone}: (852) 9587-5869 & \href{mailto:kxie@connect.ust.hk}{kxie@connect.ust.hk}
+% \end{tabular*}
+% \\
+% \vspace{0.1in}}
+
+% \begin{center}
+%     \textbf{{\LARGE Kun Xie}} ~ \href{https://cnxiekun.github.io}{\includegraphics[scale=0.04]{../../images/github}}
+% \end{center}
+
+\newcommand{\mywebheader}{
+\begin{tabular*}{\linewidth}{{l@{\extracolsep{\fill}}r}}
+    {\large Room 5569, Academic Building, HKUST, Clear Water Bay, HK} & {\large Tel: (852) 9587-5869} \\
+    {\large \href{https://cnxiekun.github.io}{https://cnxiekun.github.io}} & {\large \href{mailto:kxie@connect.ust.hk}{kxie@connect.ust.hk}}
+\end{tabular*}
+\\
+\vspace{0.15in}}
+
+\begin{center}
+    \textbf{{\huge Kun Xie}}
+\end{center}
+
+\vspace{0.1in}
+
+
+% \resheading{Personal Particulars}
+\mywebheader
+
+
+% ----------------------------- Education --------------------------------
+\resheading{Education}
+\begin{itemize}
+\item \ressubheading{The Hong Kong University of Science and Technology (HKUST)}{Hong Kong}{Ph.D Industrial Engineering and Logistic Management}{9/2014 -- 6/2018 (expected)}
+
+\begin{itemize}
+\resitem{Relevant Coursework: Machine Learning, Introduction to Algorithms, Deterministic Models in Operation Research, Stochastic Models in Operation Research, Advanced Production Planning and Control, Engineering Statistics, Stochastic Calculus, Convex Optimization}
+\end{itemize}
+
+\item \ressubheading{Nanjing University (NJU)}{Nanjing, Jiangsu}{B.Sc Mathematics}{9/2010 -- 6/2014}
+
+\begin{itemize}
+\resitem{Relevant Coursework: Real Analysis, Mathematical Analysis, Advanced Algebra, Probability Theory, Stochastic Process, C++ Programming, Scientific Computing, Numerical Analysis}
+%  Introduction to Database
+\end{itemize}
+
+\end{itemize}
+
+
+% ------------------------------ Research Interests -----------------------
+\resheading{Research Interests}
+\begin{itemize}
+\item Stochastic Modeling and Optimization, Machine Learning, Algorithms, Data Mining and Analysis
+\end{itemize}
+
+
+% ------------------------------ Research Experience ------------------------
+\resheading{Research Experience}
+\begin{itemize}
+\item
+\ressubheading{The Steady State of the Limit Order Book with Infinite Number of States}{Hong Kong}{Research Topic, Supervisor: Prof. Jiheng Zhang, Dept. of IELM}{1/2015 -- present}
+\begin{itemize}
+% \resitem{Used Python to access the NYSE data and visualized them}
+\resitem{All decisions made by buyers/sellers in the marked could be modeled by Poisson process}
+\resitem{The limit (steady) state of the best prices among buyers and sellers was derived via queueing theory and probability theory}
+\resitem{Working paper, still in progress}
+\end{itemize}
+
+
+
+\item
+\ressubheading{Crowd Analysis Prediction and Optimization}{Hong Kong}{As a Research Assistant, Supervisor: Prof. Jiheng Zhang, Dept. of IELM}{1/2016 -- 6/2016}
+\begin{itemize}
+% \resitem{Obtained the data from Hong Kong Subway database and visualized them via Python}
+\resitem{Performed statistical analysis on the data including building various models and estimating the parameters of those models}
+\resitem{Based on the data, built queueing models to model the dynamics of crowd moving in and out of stations and trains}
+\end{itemize}
+
+
+% \item
+% \ressubheading{An Application of IBM Watson Personality Insights}{Hong Kong}{As a Research Assistant, Supervisor: Prof. Allen Huang, Dept. of Accounting}{12/2015 -- 1/2016}
+% \begin{itemize}
+% \resitem{Used Python to connect one person's unstructured text with the API of IBM that enabled us to derive statistic results in JSON format}
+% \resitem{Analyzed the structure of the JSON result to obtain this person's intrinsic personality characteristics, including Big Five, Needs, and Values}
+% \end{itemize}
+
+
+\item 
+\ressubheading{A Near-Optimal Algorithm for the Robust Convex Optimization}{Hong Kong}{Convex Course Project, Instructor: Prof. Daniel P. Palomar, Dept. of ECE}{9/2015 -- 12/2015}
+\begin{itemize}
+\resitem{Considered a general robust convex optimization problem, which had many unknown parameters in the constraint}
+\resitem{Selected only finite number of unknown parameters from the given convex set, and then formed a standard convex problem which could be solved via package cvx in MatLab}
+\resitem{Regarded above result as an approximation to the solution of original problem}
+\end{itemize}
+
+
+\item
+\ressubheading{Time-Based Competition with Benchmark Effects}{Nanjing, Jiangsu}{Undergraduate Thesis, Instructors: Houcai Shen, Ting Wu}{9/2013 -- 6/2014}
+\begin{itemize}
+\resitem{Considered a duopoly where firms competed on waiting times in the presence of an industry benchmark, which was endogenous and depended on both firms' choices}
+\resitem{One firm was the leader (offered its waiting time first), another firm was the follower. The demand captured by a firm depended on the gap between the firm's offer and the benchmark}
+\resitem{When the benchmark was equal to the shorter of the two offered delays, we proved the uniqueness of the Stackelberg Nash equilibrium and obtained its closed form expression}
+\end{itemize}
+
+
+% \item 
+% \ressubheading{An Online Course Selection and Inquiry Database}{Nanjing, Jiangsu}{Database course Project, Instructor: Zhaoyang Wu}{10/2011 -- 12/2011}
+% \begin{itemize}
+% \resitem{Used SQL and Python to develop and implement an online course inquiry system}
+% \resitem{Understood the data structure of the system, extracted data from official websites and database}
+% \end{itemize}
+
+\end{itemize}
+
+
+\newpage
+% ------------------------------ Skills -------------------------------------
+\resheading{Skills}
+\begin{itemize}
+\item \textbf{Programming and Software:} Python, MatLab, Mathematics, SQL
+% \LaTeX, Markdown
+\item \textbf{Languages:} English (Fluent)
+% Mandarin (Native)
+\end{itemize}
+
+
+% ----------------------------- Awards and Honors -------------------------
+\resheading{Awards and Honors}
+\begin{center}
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+\multicolumn{2}{c}{Awarded postgraduate studentship (The Hong Kong University of Science and Technology) \cftdotfill{\cftdotsep}2014 -- present} \\
+\multicolumn{2}{c}{Awarded school outstanding student graduate (Nanjing University) \cftdotfill{\cftdotsep}2014} \\
+\multicolumn{2}{c}{Second Prize, People Scholarship (Top 5$\%$, Awarded by Ministry of Education, China) \cftdotfill{\cftdotsep}2012, 2013} \\
+\multicolumn{2}{c}{Awarded one of the first academic honor committee members in the student academic community \cftdotfill{\cftdotsep} 2012} \\
+\multicolumn{2}{c}{Awarded Fundamental Mathematics  Scholarship (Dept. of Mathematics, Nanjing University) \cftdotfill{\cftdotsep}2011, 2012, 2013} \\
+\multicolumn{2}{c}{Third Prize, People Scholarship (Top 15$\%$, Awarded by Ministry of Education, China) \cftdotfill{\cftdotsep}2011} \\
+\multicolumn{2}{c}{Awarded school outstanding student cadre (Nanjing University)\cftdotfill{\cftdotsep} 2011} \\
+\multicolumn{2}{c}{First Prize at Olympic Mathematics Competition, Jiangsu Province \cftdotfill{\cftdotsep}2009} \\
+\vphantom{E}
+\end{tabular*}
+\end{center}
+
+\vspace{-0.2in}
+
+% ------------------------------ Extracurricular Activities ----------------
+\resheading{Extracurricular Activities}
+\begin{center}
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+\multicolumn{2}{c}{Participant, academic communications of Mathematics, Peking University \cftdotfill{\cftdotsep}8/2012} \\
+\multicolumn{2}{c}{Participant, four-universities summer campaign of Mathematics, Xiamen University \cftdotfill{\cftdotsep}8/2011} \\
+\multicolumn{2}{c}{Co-founder, student academic community of top student training program, Nanjing University \cftdotfill{\cftdotsep}2/2011} \\
+\multicolumn{2}{c}{Core member, table tennis team, Dept. of Mathematics, Nanjing University \cftdotfill{\cftdotsep}9/2010 -- 6/2014} \\
+\multicolumn{2}{c}{Monitor, Dept. of Mathematics, Nanjing University \cftdotfill{\cftdotsep}9/2010 -- 6/2014} \\
+\vphantom{E}
+\end{tabular*}
+\end{center}
+
+
+% ------------------------------ Standardized Tests -----------------------
+% \resheading{Standardized Tests}
+% \begin{itemize}
+% \item TOEFL: 
+% \end{itemize}
+
+
+\end{document}
+
+
+
+

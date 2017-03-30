@@ -1,22 +1,20 @@
 ---
-title: Kun XIE
+title: About me
 date: 2017-03-26 00::00
 comments: false
 ---
 
 ## Basic Information
-
 - Ph.D. candidate, supervised by Professor [Jiheng Zhang](http://verse.ust.hk)
 - [Department of Industrial Engineering and Logistic Management](http://www.ielm.ust.hk/eng/index.php)
 - [Hong Kong University of Science and Technology](http://www.ust.hk)
 - Email: <kxie@connect.ust.hk>, <cnxiekun@gmail.com>
+- [Resume](index/CV/KunXIE-CV_eng.pdf) &ensp;&ensp; [中文简历](index/CV/KunXIE-CV_chs.pdf)
 
 ## Current Working
-
 - Financial Market Data Modeling and Analysis
 
 ## Research Interests
-
 - Stochastic Modeling and Optimization
 - Machine Learning
 - Algorithms
@@ -25,12 +23,10 @@ comments: false
 ## Study Activities
 
 ### Currently Self-learning / Enrolled in
-
 - CSIT 6000E - Advanced Algorithms
 - [Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
 
 ### Relevant Coursework:
-
 - Deterministic Models in Operation Research
 - Stochastic Models in Operation Research
 - Advanced Production Planning and Control
@@ -39,16 +35,14 @@ comments: false
 - Convex Optimization
 
 ### Self-learned Books / Courses:
-
 - [Machine Learning in Action](https://www.manning.com/books/machine-learning-in-action) by Alexandre Alves, Oracle Corporation
 - [Machine Learning](https://www.coursera.org/learn/machine-learning) by Andrew NG
-- [Machine Learning Foundations: A Case Study Approach](https://www.coursera.org/learn/ml-foundations) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Foundations)  [<font color=#5bc0de>Certificate</font>](index/ML-Foundations.pdf)
-- [Machine Learning: Regression](https://www.coursera.org/learn/ml-regression) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Regression)  [<font color=#5bc0de>Certificate</font>](index/ML-Regression.pdf)
-- [Machine Learning: Classification](https://www.coursera.org/learn/ml-classification) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Classification)  [<font color=#5bc0de>Certificate</font>](index/ML-Classification.pdf)
-- [Machine Learning: Clustering & Retrieval](https://www.coursera.org/learn/ml-clustering-and-retrieval) in Coursera [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-ClusteringAndRetrieval)  [<font color=#5bc0de>Certificate</font>](index/ML-ClusteringAndRetrieval.pdf)
+- [Machine Learning Foundations: A Case Study Approach](https://www.coursera.org/learn/ml-foundations) in Coursera &ensp;&ensp; [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Foundations) &ensp;&ensp; [<font color=#5bc0de>Certificate</font>](index/Certificates/ML-Foundations.pdf)
+- [Machine Learning: Regression](https://www.coursera.org/learn/ml-regression) in Coursera &ensp;&ensp; [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Regression) &ensp;&ensp;[<font color=#5bc0de>Certificate</font>](index/Certificates/ML-Regression.pdf)
+- [Machine Learning: Classification](https://www.coursera.org/learn/ml-classification) in Coursera &ensp;&ensp; [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-Classification) &ensp;&ensp; [<font color=#5bc0de>Certificate</font>](index/Certificates/ML-Classification.pdf)
+- [Machine Learning: Clustering & Retrieval](https://www.coursera.org/learn/ml-clustering-and-retrieval) in Coursera &ensp;&ensp; [<font color=#5bc0de>Code</font>](https://github.com/cnxiekun/ML-ClusteringAndRetrieval) &ensp;&ensp; [<font color=#5bc0de>Certificate</font>](index/Certificates/ML-ClusteringAndRetrieval.pdf)
 
-#### Teaching Assistant:
-
+### Teaching Assistant:
 - IELM 2510 - Engineering Probability and Statistics
 - IELM 4180 - Service Engineering and Management
 - IELM 4410 - Global Supply Chain Management

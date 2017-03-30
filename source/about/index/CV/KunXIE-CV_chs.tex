@@ -1,0 +1,267 @@
+%!TEX program = xelatex
+% \documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,9pt]{ctexart}
+
+% \usepackage{amsfonts,amsthm,amssymb,amsmath,mathrsfs}
+% \usepackage{tikz}
+% \usetikzlibrary{arrows,shapes,trees}
+% \usetikzlibrary{backgrounds}
+% \usepackage{graphicx,color,hyperref,subfig}
+% \usepackage{pdfsync}
+%\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+%\usepackage[dvipdfm]{hyperref} % for generating hyperreference when compiling by LaTex instead of XeLaTex
+
+
+%-----------------------------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{bibentry}
+\usepackage{graphicx}
+
+% \usepackage{xunicode}
+% \usepackage{xltxtra}
+% \usepackage{fontspec}
+% \setmainfont{Garamond}
+
+% \usepackage[garamond]{mathdesign}
+% \usepackage[T1]{fontenc}
+% \usepackage{lmodern}
+% \usepackage{garamond}
+
+
+% for highlighting changes
+\usepackage[normalem]{ulem}
+\newcommand{\delete}[1]{\textcolor{red}{\sout{#1}}} % delete
+\newcommand{\replace}[2]{\textcolor{red}{\sout{#1}} \textcolor{blue}{{#2}}} % replace #1 with #2
+\newcommand{\red}[1]{\textcolor{red}{#1}} % red / emphasize
+% \newcommand{\comment}[2]{\textcolor{blue}{({#1}: {#2})}} % comments
+\newcommand{\kxie}[1]{\textcolor{magenta}{{Kun: }{#1}}} % comments by Kun
+\newcommand{\purple}[1]{\textcolor{myPrince}{#1}} % purple / example
+\newcommand{\blue}[1]{\textcolor{blue}{#1}} % blue
+
+\definecolor{myBlue}{RGB}{0,51,102}
+\definecolor{myGold}{RGB}{28,122,166}
+\definecolor{myPrince}{RGB}{188,47,235}
+\definecolor{mygrey}{gray}{.85}
+\definecolor{mygreylink}{gray}{.30}
+
+% font of text and math
+% \usepackage{pslatex} %font: pslatex
+% \usepackage[T1]{fontenc}
+% \usepackage{textcomp}
+% \usepackage[scaled=.92]{helvet}
+% \usepackage{mathpazo}
+
+\hypersetup{
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=mygreylink     % can put red here to better visualize the links
+}
+\urlstyle{same}
+\textheight=9.0in
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.374in}
+\addtolength{\evensidemargin}{0.374in}
+\addtolength{\textwidth}{0.5in}
+\addtolength{\topmargin}{0in}
+\addtolength{\textheight}{0.75in}
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{{\large \colorbox{mygrey}{\begin{minipage}{\textwidth}{\textbf{#1 \vphantom{p\^{E}}}}\end{minipage}}}}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    #3 & #4 \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+
+
+\begin{document}
+
+% \newcommand{\mywebheader}{
+% \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+%     \textbf{PRESENT ADDRESS} & \textbf{PERMANENT ADDRESS} \\
+%     Room 5569, HKUST         & Room 5569, HKUST \\
+%     Clear Water Bay, KLN, HK & Clear Water Bay, KLN, HK \\
+%     \includegraphics[scale=0.025]{../../images/phone}: (852) 9587-5869 & \href{mailto:kxie@connect.ust.hk}{kxie@connect.ust.hk}
+% \end{tabular*}
+% \\
+% \vspace{0.1in}}
+
+% \begin{center}
+%     \textbf{{\LARGE Kun Xie}} ~ \href{https://cnxiekun.github.io}{\includegraphics[scale=0.04]{../../images/github}}
+% \end{center}
+
+\newcommand{\mywebheader}{
+\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+    {\large Room 5569, Academic Building, HKUST, Clear Water Bay, KLN, HK} & {\large Tel: (852) 9587-5869} \\
+    {\large \href{https://cnxiekun.github.io}{https://cnxiekun.github.io}} & {\large \href{mailto:kxie@connect.ust.hk}{kxie@connect.ust.hk}}
+\end{tabular*}
+\\
+\vspace{0.15in}}
+
+\begin{center}
+    \textbf{{\huge 谢~坤}}
+\end{center}
+
+\vspace{0.1in}
+
+\mywebheader
+\quad
+
+
+% ----------------------------- Education --------------------------------
+\resheading{教育背景}
+\begin{itemize}
+\item \ressubheading{香港科技大学}{香港}{工业工程与运营管理学博士}{9/2014 -- 至今}
+
+\begin{itemize}
+\resitem{相关课程: Machine Learning, Introduction to Algorithms, Deterministic Models in Operation Research, Stochastic Models in Operation Research, Advanced Production Planning and Control, Engineering Statistics, Stochastic Calculus, Convex Optimization}
+\end{itemize}
+
+\item \ressubheading{南京大学}{江苏省南京市}{数学系理论数学学士}{9/2010 -- 6/2014}
+
+\begin{itemize}
+\resitem{相关课程: 实变函数, 数学分析, 高等代数, 概率论, 随机过程, C++, 数值计算, 数值分析}
+% 数据库导论
+\end{itemize}
+
+\end{itemize}
+
+
+% ------------------------------ Research Interests -----------------------
+\resheading{研究兴趣}
+\begin{itemize}
+\item 随机模型与优化, 机器学习, 算法, 数据挖掘与分析
+\end{itemize}
+
+
+% ------------------------------ Research Experience ------------------------
+\resheading{科研经历}
+\begin{itemize}
+\item
+\ressubheading{无穷维状态空间的连续马尔可夫链在股票市场的应用}{香港}{论文课题, 指导老师: Jiheng Zhang 教授, 工业工程运营管理系}{1/2015 -- 至今}
+\begin{itemize}
+% \resitem{用Python读取数据库中NYSE股票市场(limit order book)的两个月的真实数据, 并将其可视化}
+\resitem{观察数据发现股票市场的买家卖家的各类决定都可用泊松过程来建模}
+\resitem{利用排队论, 概率论尤其是大数定理, 中心极限定理的知识求得在极限(平稳)状态下买家卖家的最优价格的分布}
+\resitem{与导师关于该课题的研究尚未完成, 仍在进行中}
+\end{itemize}
+
+
+\item
+\ressubheading{香港地铁人群流动分析预测与决策优化}{香港}{作为研究助理, 指导老师: Jiheng Zhang 教授, 工业工程与运营管理学系}{1/2016 -- 6/2016}
+\begin{itemize}
+% \resitem{用 Python 连接数据库进而提取每个地铁站每天的人流状况(每天每人何时进/出站, 从哪儿进/出站), 随后将这些数据可视化}
+\resitem{用统计的知识建立人群流动的模型, 并估计模型参数}
+\resitem{基于数据, 建立关于各站进出的排队模型}
+\end{itemize}
+
+
+% \item
+% \ressubheading{基于IBM个性分析的应用}{香港}{作为研究助理, 指导老师: Allen Huang教授, 会计学系}{12/2015 -- 1/2016}
+% \begin{itemize}
+% \resitem{用 Python 将关于公司客户的文本信息(可以是该客户说的话或写的文字等)与IBM网站的API接口连接起来, 从而获得JSON格式的结果}
+% \resitem{分析以上JSON 结果的数据结构, 提取所该客户的各项性格数据, 如Big Five, Needs, 以及 Values数据}
+% \end{itemize}
+
+
+\item 
+\ressubheading{鲁棒凸优化问题的一个近似最优算法}{香港}{凸优化课程项目, 指导老师: Daniel P. Palomar教授, 电子及计算机工程学系}{9/2015 -- 12/2015}
+\begin{itemize}
+\resitem{考虑一个鲁棒凸优化问题, 其中约束条件中的未知参数属于一个给定的凸集(可看成无穷多个约束函数)}
+\resitem{仅选取有限多个约束函数作为约束条件, 形成一个可在MatLab用cvx包求解的标准化的凸优化问题}
+\resitem{将上述得到的结果作为原问题的近似解, 并对其进行了理论分析}
+\end{itemize}
+
+
+\item 
+\ressubheading{顾客具有参考效应的排队竞争模型}{江苏省南京市}{南京大学本科毕业论文, 指导老师: 沈厚才, 吴婷教授, 工程管理学系}{9/2013 -- 6/2014}
+\begin{itemize}
+\resitem{两家公司在市场标准存在的情况下对顾客的等待时间进行竞争, 其中市场标准是内生的, 取决于两家公司的决定}
+\resitem{其中一家公司是领先者(leader, 先决定其顾客的等待时间), 另一家是跟随者(follower), 公司的顾客率取决于该公司的等待时间与市场标准的差距}
+\resitem{当市场标准等于两家公司给出的较短的等待时间时, 我们证明了斯坦克尔伯格均衡(Stackelberg equilibrium)的存在唯一性, 并求得其精确解}
+% \resitem{掌握了一些排队论, 博弈论等相关领域的知识}
+\end{itemize}
+
+
+% \item 
+% \ressubheading{网上选课及查询数据库}{江苏省南京市}{数据库课程项目, 指导老师: 吴朝阳教授, 数学系}{10/2011 -- 12/2011}
+% \begin{itemize}
+% \resitem{使用SQL和Python语言编写了一个在线查询课程信息的数据库}
+% \resitem{了解系统的数据结构, 并从学校官方网站和数据库中提取所需数据}
+% \end{itemize}
+
+\end{itemize}
+
+
+% ------------------------------ Skills -------------------------------------
+\resheading{技能}
+\begin{itemize}
+\item \textbf{编程语言及软件:} Python, MatLab, Mathematics, SQL
+% \LaTeX, Markdown
+\item \textbf{语言:} 普通话 (母语), 英语 (流利)
+\end{itemize}
+
+
+% ----------------------------- Awards and Honors -------------------------
+\resheading{荣誉奖章}
+\begin{center}
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+
+\multicolumn{2}{c}{香港科技大学博士生全额奖学金 \cftdotfill{\cftdotsep}2014 -- 至今} \\
+\multicolumn{2}{c}{优秀毕业生 (南京大学颁发) \cftdotfill{\cftdotsep}2014} \\
+\multicolumn{2}{c}{二等人民奖学金 (前5$\%$, 中国教育局颁发) \cftdotfill{\cftdotsep}2012, 2013} \\
+\multicolumn{2}{c}{数学系拔尖计划奖学金 (南京大学数学系颁发) \cftdotfill{\cftdotsep}2011, 2012, 2013} \\
+\multicolumn{2}{c}{三等人民奖学金 (前15$\%$, 中国教育局颁发) \cftdotfill{\cftdotsep}2011} \\
+\multicolumn{2}{c}{优秀学生干部 (南京大学颁发)\cftdotfill{\cftdotsep}2011} \\
+\multicolumn{2}{c}{江苏省数学竞赛一等奖 \cftdotfill{\cftdotsep}2009} \\
+\vphantom{E}
+\end{tabular*}
+\end{center}
+
+\vspace{-0.2in}
+
+% ------------------------------ Activities and Leadership ----------------
+\resheading{课外活动}
+\begin{center}
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+
+\multicolumn{2}{c}{数学学术交流, 北京大学 \cftdotfill{\cftdotsep}8/2012} \\
+\multicolumn{2}{c}{四校联合暑期数学夏令营, 厦门大学 \cftdotfill{\cftdotsep}8/2011} \\
+\multicolumn{2}{c}{首批南京大学拔尖计划学术共同体委员会成员 \cftdotfill{\cftdotsep}2/2011} \\
+\multicolumn{2}{c}{南京大学数学系乒乓球队核心队员 \cftdotfill{\cftdotsep}9/2010 -- 6/2014} \\
+\multicolumn{2}{c}{南京大学数学系年级长 \cftdotfill{\cftdotsep}9/2010 -- 6/2014} \\
+\vphantom{E}
+\end{tabular*}
+\end{center}
+
+
+
+% ------------------------------ Standardized Tests -----------------------
+% \resheading{Standardized Tests}
+% \begin{itemize}
+% \item TOEFL: 
+% \end{itemize}
+
+
+\end{document}
+
+
+
+

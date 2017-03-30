@@ -143,6 +143,7 @@ font:
 social:
   GitHub: https://github.com/cnxiekun
   Weibo: http://weibo.com/1740393132
+  Email: mailto:cnxiekun@gmail.com
   #LinkLabel: Link
   #Zhihu: Link
 
@@ -160,6 +161,7 @@ social_icons:
   # Twitter: twitter
   Weibo: weibo
   # Zhihu: battery-3
+  Email: envelop-o
 
 
 # Sidebar Avatar

@@ -6,7 +6,6 @@ tags: Git
 description:
 ---
 
-
 ## Installing Git on Mac OS
 On Mac OS X, a one-click installer package is available that can be downloaded from here: 
 [link](https://code.google.com/p/git-osx-installer/downloads/list?can=3)
@@ -20,6 +19,8 @@ A couple of very basic configurations should be made before you get started. For
 $ git config --global user.name "John Doe"
 $ git config --global user.email "john@doe.org"
 ```
+
+<!--more-->
 
 ## Create a local repository
 you can use the following commands to creat an empty local repository:
@@ -134,4 +135,4 @@ The following command uploads all the new commits from our current HEAD branch t
 $ git push
 ```
 
-That's it, very easy!
+That's it, enjoy it!

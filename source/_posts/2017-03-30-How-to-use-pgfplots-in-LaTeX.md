@@ -39,15 +39,14 @@ Using the following commands can generate the plots automatically.
 
 ```latex
 \begin{tikzpicture}
-    \begin{axis}[
-    	title = {Picture 1},  % whatever name you want
-    	xlabel = {$x$},
-    	ylabel = {$y$},
-    	ymin = -3, ymax = 3,
-    	minor y tick num = 1,
-    	]
-    	\addplot[blue] table {data.dat};
-    \end{axis}
+\begin{axis}[
+  title = {Picture 1},  % whatever name you want
+  xlabel = {$x$},
+  ylabel = {$y$},
+  ymin = -3, ymax = 3,
+  minor y tick num = 1,]
+  \addplot[blue] table {data.dat};
+\end{axis}
 \end{tikzpicture
 ```
 
@@ -70,17 +69,13 @@ Of course, we can also use another way to generate a plot. More precisely, `\add
 
 ```latex
 \begin{tikzpicture}
-    \begin{axis}
-		% density of Normal distribution:
-		\newcommand\MU{0}
-		\newcommand\SIGMA{1e-3}
-		\addplot[
-			red,
-			domain = -3*\SIGMA: 3*\SIGMA,
-			samples = 201,
-			]
-			{exp(-(x-\MU)^2 / 2 / \SIGMA^2) / (\SIGMA * sqrt(2*pi))};
-	\end{axis}
+\begin{axis}
+  % density of Normal distribution:
+  \newcommand\MU{0}
+  \newcommand\SIGMA{1e-3}
+  \addplot[red, domain = -3*\SIGMA: 3*\SIGMA, samples = 201,]
+	       {exp(-(x-\MU)^2 / 2 / \SIGMA^2) / (\SIGMA * sqrt(2*pi))};
+\end{axis}
 \end{tikzpicture}
 ```
 
@@ -109,19 +104,18 @@ The other files are similar.
 
 If we wnat to produce a loglog plot, the following commands can make this happen:
 
-```
+```latex
 \begin{tikzpicture}
-    \begin{loglogaxis}[
-    	title = {Convergence Plot},
-    	xlabel = {Degrees of freedom},
-    	ylabel = {$L_2$ Error},
-    	grid = major,
-    	legend entries = {$d=2$, $d=3$, $d = 4$},
-    	]
-    	\addplot table {data_d2.dat};
-    	\addplot table {data_d3.dat};
-    	\addplot table {data_d4.dat};
-    \end{loglogaxis}
+\begin{loglogaxis}[
+  title = {Convergence Plot},
+  xlabel = {Degrees of freedom},
+  ylabel = {$L_2$ Error},
+  grid = major,
+  legend entries = {$d=2$, $d=3$, $d = 4$},]
+  \addplot table {data_d2.dat};
+  \addplot table {data_d3.dat};
+  \addplot table {data_d4.dat};
+\end{loglogaxis}
 \end{tikzpicture}
 ```
 Here is the result:
@@ -186,36 +180,35 @@ Then the following commands can help us obtain the below plot:
 
 ```latex
 \begin{tikzpicture}
-    \begin{axis}[
-        width=15cm, height=8cm,     % size of the image
-        grid = major,
-        grid style = {dashed, gray!30},
-        % xmode=log,log basis x=10,
-        % ymode=log,log basis y=10,
-        xmin = 0,     % start the diagram at this x-coordinate
-        xmax = 62,    % end   the diagram at this x-coordinate
-        ymin = 0,     % start the diagram at this y-coordinate
-        ymax = 1.1,   % end   the diagram at this y-coordinate
-        /pgfplots/xtick = {0,5,...,60}, % make steps of length 5
-        extra x ticks = {23},
-        extra y ticks = {0.507297},
-        axis background/.style = {fill=white},
-        ylabel = {probability of at least one birthday-collision},
-        xlabel = {people},
-        tick align = outside,
-        ]
+\begin{axis}[
+  width=15cm, height=8cm,  % size of the image
+  grid = major,
+  grid style = {dashed, gray!30},
+  % xmode=log,log basis x=10,
+  % ymode=log,log basis y=10,
+  xmin = 0,   % start the diagram at this x-coordinate
+  xmax = 62,  % end   the diagram at this x-coordinate
+  ymin = 0,   % start the diagram at this y-coordinate
+  ymax = 1.1, % end   the diagram at this y-coordinate
+  /pgfplots/xtick = {0,5,...,60},  % make steps of length 5
+  extra x ticks = {23},
+  extra y ticks = {0.507297},
+  axis background/.style = {fill=white},
+  ylabel = {probability of at least one birthday-collision},
+  xlabel = {people},
+  tick align = outside,]
+  
+  % import the correct data from a CSV file
+  \addplot table {data.csv};
 
-		% import the correct data from a CSV file
-		\addplot table {data.csv};
+  % mark x=23
+  \coordinate (a) at (axis cs:23, 0.507297);
+  \draw[blue, dashed, thick](a -| current plot begin) -- (a);
+  \draw[blue, dashed, thick](a |- current plot begin) -- (a);
 
-		% mark x=23
-		\coordinate (a) at (axis cs:23, 0.507297);
-		\draw[blue, dashed, thick](a -| current plot begin) -- (a);
-		\draw[blue, dashed, thick](a |- current plot begin) -- (a);
-
-		% plot the stirling-formulae
-		\addplot[domain=0:60, red, thick] {1-(365/(365-x))^(365.5-x)*e^(-x)}; 
-    \end{axis} 
+  % plot the stirling-formulae
+  \addplot[domain=0:60, red, thick] {1-(365/(365-x))^(365.5-x)*e^(-x)}; 
+\end{axis} 
 \end{tikzpicture}
 ```
 
@@ -223,4 +216,3 @@ Then the following commands can help us obtain the below plot:
 ![Picture 1](2017-03-30-How-to-use-pgfplots-in-LaTeX/7.png)
 
 For more details about the package `pgfplots`, please download the pdf tutorial [Manual for Package PGFPLOTS](http://sourceforge.net/projects/pgfplots) as a reference.
-

@@ -9,6 +9,7 @@
     "hexo": "^3.2.2",
     "hexo-algolia": "^0.2.0",
     "hexo-algoliasearch": "^0.2.1",
+    "hexo-asset-image": "git+https://github.com/CodeFalling/hexo-asset-image.git",
     "hexo-deployer-git": "^0.2.0",
     "hexo-deployer-heroku": "^0.1.1",
     "hexo-deployer-openshift": "^0.1.1",

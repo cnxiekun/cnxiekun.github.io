@@ -2,7 +2,7 @@
 title: How to use pgfplots in LaTeX
 date: 2017-03-30 17:01:37
 categories: Technique
-tags: LaTex
+tags: LaTeX
 description:
 ---
 
@@ -74,7 +74,7 @@ Of course, we can also use another way to generate a plot. More precisely, `\add
   \newcommand\MU{0}
   \newcommand\SIGMA{1e-3}
   \addplot[red, domain = -3*\SIGMA: 3*\SIGMA, samples = 201,]
-	       {exp(-(x-\MU)^2 / 2 / \SIGMA^2) / (\SIGMA * sqrt(2*pi))};
+          {exp(-(x-\MU)^2 / 2 / \SIGMA^2) / (\SIGMA * sqrt(2*pi))};
 \end{axis}
 \end{tikzpicture}
 ```
@@ -141,16 +141,15 @@ For example, if we have a file called ``data_3d.dat`` which contains the followi
 
 Using the below commands can obtain the desired plot:
 
-```
+```latex
 \begin{tikzpicture}
-    \begin{axis}[
-        xlabel = $x$,
-        ylabel = $y$,
-        zlabel = {$f(x,y) = x \cdot y$},
-        title = {A Scatter Plot Example},
-        ]
-        \addplot3+[only marks, scatter] table {data_3d.dat};
-    \end{axis}
+\begin{axis}[
+  xlabel = $x$,
+  ylabel = $y$,
+  zlabel = {$f(x,y) = x \cdot y$},
+  title = {A Scatter Plot Example},]
+  \addplot3+[only marks, scatter] table {data_3d.dat};
+\end{axis}
 \end{tikzpicture}
 ```
 

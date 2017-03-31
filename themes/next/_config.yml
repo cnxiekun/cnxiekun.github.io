@@ -491,16 +491,18 @@ exturl: false
 #! ---------------------------------------------------------------
 
 # Motion
-use_motion: true
+use_motion: false
 
 # Fancybox
 fancybox: true
 
 # Canvas-nest
-canvas_nest: true
+# canvas_nest: true
+canvas_nest: false
 
 #three_waves
 three_waves: false
+# three_waves: false
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.

@@ -89,6 +89,15 @@
                 {{ date(post.updated, config.date_format) }}
               </time>
             {% endif %}
+
+            {%if post.updated and post.updated > post.date%}
+              <span class="post-updated">
+              &nbsp; | &nbsp; {{ __('post.updated') }}
+              <time itemprop="dateUpdated" datetime="{{ moment(post.updated).format() }}" content="{{ date(post.updated, config.date_format) }}">
+                {{ date(post.updated, config.date_format) }}
+              </time>
+              </span>
+            {% endif %}
          </span>
 
           {% if post.categories and post.categories.length and theme.post_meta.categories %}
@@ -303,9 +312,11 @@
       </div>
 
       <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span> &nbsp;<a href="{{ url_for(post.path) }}">{{ post.title }}</a></p>
          <p><span>文章作者:</span> &nbsp;<a href="/" title="访问 {{ theme.author }} 的个人博客">{{ theme.author }}</a></p>
-         <p><span>原始链接:</span>  &nbsp;<a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.permalink }}</a></p>
-         
+         <p><span>发布时间:</span> &nbsp;{{ post.date.format("YYYY年MM月DD日 - HH时mm分ss秒") }}</p>
+         <p><span>最后更新:</span> &nbsp;{{ post.updated.format("YYYY年MM月DD日 - HH时mm分ss秒") }}</p>
+         <p><span>原始链接:</span> &nbsp;<a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.permalink }}</a></p>
          <p><span>转载请保留以上信息。</span></p>
       </div>
     {% endif %}

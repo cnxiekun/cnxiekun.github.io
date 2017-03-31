@@ -102,6 +102,7 @@ font:
     # family: Lato
     family: Neucha
     # family: Patrick Hand
+    # family: Courier New
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
@@ -496,13 +497,9 @@ use_motion: false
 # Fancybox
 fancybox: true
 
-# Canvas-nest
-# canvas_nest: true
-canvas_nest: false
-
-#three_waves
-three_waves: false
+# canvas_nest: false
 # three_waves: false
+
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.

@@ -7,8 +7,7 @@ description:
 ---
 
 ## Installing Git on Mac OS
-On Mac OS X, a one-click installer package is available that can be downloaded from here: 
-[link](https://code.google.com/p/git-osx-installer/downloads/list?can=3)
+On Mac OS X, a one-click installer package is available that can be downloaded from here: [link](https://code.google.com/p/git-osx-installer/downloads/list?can=3)
 
 Once this is installed, you can jump right into Git by starting "Terminal.app" on your Mac.
 
@@ -16,14 +15,14 @@ Once this is installed, you can jump right into Git by starting "Terminal.app" o
 A couple of very basic configurations should be made before you get started. For example, set your name and email address as follows:
 
 ```bash
-$ git config --global user.name "John Doe"
-$ git config --global user.email "john@doe.org"
+$ git config --global user.name "cnxiekun"
+$ git config --global user.email "cnxiekun@gmail.com"
 ```
 
 <!--more-->
 
 ## Create a local repository
-you can use the following commands to creat an empty local repository:
+you can use the following commands to create an empty local repository:
 
 ```bash
 $ cd path/to/project/folder
@@ -59,7 +58,7 @@ You can stage some changes with the "git add" command:
 $ git add new-page.html index.html css/*
 ```
 
-With this command, we added the new "new-page.html" file, the modifications in "index.html", and all the changes in the "css" folder to the Staging Area.  
+With this command, we added the new "new-page.html" file, the modifications in "index.html", and all the changes in the "css" folder to the Staging Area. 
 
 If you want to record the removal of some file in the next commit, you may use
 
@@ -84,7 +83,9 @@ the commit message after "-m" is usually a short summary of your changes (up to 
   
 The following command is used to display the project's commit history:
 
-    $ git log  
+```bash
+$ git log 
+```
 
 ### Branching and Merging  
 You are always working on a certain branch (the currently active, or "checked out", or "HEAD" branch). "git status"

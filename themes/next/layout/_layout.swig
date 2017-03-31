@@ -76,22 +76,43 @@
        <!-- <a href="https://github.com/cnxiekun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a> -->
 
 
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
+  <!-- 按需加载背景 -->
+  <!-- 识别手机或电脑的js开始 -->  
+  // <script type="text/javascript">   
+  // (function(){  
+  //   var res = GetRequest();  
+  //   var par = res['index'];  
+  //   if(par!='gfan'){  
+  //     var ua=navigator.userAgent.toLowerCase();  
+  //     var contains=function (a, b){  
+  //         if(a.indexOf(b)!=-1){return true;}  
+  //     };   
+  //     if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+  //       return false;
+  //     } else {
+  //       $.getScript("/js/src/particle.js");
+  //     }
+  //   }  
+  // })();  
+  // function GetRequest() {  
+  //   var url = location.search;
+  //   var theRequest = new Object();  
+  //   if (url.indexOf("?") != -1) {  
+  //     var str = url.substr(1);  
+  //     strs = str.split("&");  
+  //     for(var i = 0; i < strs.length; i ++) {  
+  //       theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);  
+  //     }  
+  //   }  
+  //   return theRequest;  
+  // }  
+  // </script>  
+  <!-- 识别手机或电脑的js结束 -->  
 
-<!-- <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script> -->
+  <!-- 背景动画 -->
+  <!-- // <script type="text/javascript" src="/js/src/particle.js"></script> -->
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
 
 </body>
 </html>

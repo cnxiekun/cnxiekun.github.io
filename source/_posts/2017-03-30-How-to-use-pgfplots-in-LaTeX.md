@@ -1,7 +1,7 @@
 ---
 title: How to use pgfplots in LaTeX
 date: 2017-03-30 17:01:37
-categories: Technique
+categories: LaTeX
 tags: LaTeX
 description:
 ---
@@ -172,7 +172,12 @@ Here is data from `data.csv` file:
 
 people	|	probability
 ------ |  ----
-0	|	0.0000001	|	0.0000002	|	0.0027403	|	0.0082044	|	0.0163565	|	0.027136
+0	|	0.000000
+1	|	0.000000
+2	|	0.002740
+3	|	0.008204
+4	|	0.016356
+5	|	0.027136
 ...|...
 
 Then the following commands can help us obtain the below plot:

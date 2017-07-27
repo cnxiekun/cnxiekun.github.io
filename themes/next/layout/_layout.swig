@@ -111,7 +111,7 @@
   <!-- 识别手机或电脑的js结束 -->  
 
   <!-- 背景动画 -->
-  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
   <!-- 页面点击小红心 -->
   <script type="text/javascript" src="/js/src/love.js"></script>
 

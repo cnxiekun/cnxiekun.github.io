@@ -132,6 +132,6 @@ deploy:
   type: git
   repository: 
     github: git@github.com:cnxiekun/cnxiekun.github.io.git
-    coding: git@git.coding.net:cnxiekun/cnxiekun.git
+    # coding: git@git.coding.net:cnxiekun/cnxiekun.git
   branch: master
 

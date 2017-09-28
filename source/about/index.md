@@ -5,25 +5,27 @@ comments:
 ---
 
 ## Basic Information
-- Ph.D. candidate, supervised by Professor [Jiheng Zhang](http://verse.ust.hk)
+
+- Ph.D. candidate, supervised by Professor [Jiheng Zhang](http://dmac.ust.hk)
 - [Department of Industrial Engineering and Logistic Management](http://www.ielm.ust.hk/eng/index.php)
 - [Hong Kong University of Science and Technology](http://www.ust.hk)
 - Email: <kxie@connect.ust.hk>, <cnxiekun@gmail.com>
 - [<font color=#5bc0de>Resume</font>](index/CV/KunXIE-CV_eng.pdf) &ensp;&ensp; [<font color=#5bc0de>中文简历</font>](index/CV/KunXIE-CV_chs.pdf)
 
 ## Current Working
-- Financial Market Data Modeling and Analysis
+- Several Industrial Projects
 
 ## Research Interests
 - Stochastic Modeling and Optimization
-- Machine Learning
+- Machine Learning and Deep Learning
 - Algorithms
 - Data Mining and Analysis
 
 ## Study Activities
 
 ### Currently Self-learning / Enrolled in
-- CSIT 6000E - Advanced Algorithms
+- COMP 5711 - Advanced Algorithm
+- [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) by Andrew Ng
 - [Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
 
 ### Relevant Coursework:
@@ -46,6 +48,7 @@ comments:
 - IELM 2510 - Engineering Probability and Statistics
 - IELM 4180 - Service Engineering and Management
 - IELM 4410 - Global Supply Chain Management
+- IELM 5270 - Engineering Statistics
 - EEMT 5500 - Applied Probability, Statistics and Data Analytics
 - EEMT 5530 - Financial Engineering and Risk Management
 

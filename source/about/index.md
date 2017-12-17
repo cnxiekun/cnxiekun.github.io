@@ -7,24 +7,24 @@ comments:
 ## Basic Information
 
 - Ph.D. candidate, supervised by Professor [<font color=#06c>Jiheng Zhang</font>](http://dmac.ust.hk)
-- [<font color=#06c>Department of Industrial Engineering and Logistic Management</font>](http://www.ielm.ust.hk/eng/index.php)
+- [<font color=#06c>Department of Industrial Engineering and Decision Analytics</font>](http://www.ielm.ust.hk/eng/index.php) (to be renamed)
 - [<font color=#06c>Hong Kong University of Science and Technology</font>](http://www.ust.hk)
 - Email: <kxie@connect.ust.hk>, <cnxiekun@gmail.com>
-- [<font color=#5bc0de>Resume</font>](index/CV/KunXIE-CV_eng.pdf) &ensp;&ensp; [<font color=#5bc0de>中文简历</font>](index/CV/KunXIE-CV_chs.pdf)
+<!--- [<font color=#5bc0de>Resume</font>](index/CV/KunXIE-CV_eng.pdf) &ensp;&ensp; [<font color=#5bc0de>中文简历</font>](index/CV/KunXIE-CV_chs.pdf)-->
+- <font color=#5bc0de>Resume (to be updated)</font> &ensp;&ensp; [<font color=#5bc0de>中文简历</font>](index/CV/KunXIE-CV_chs.pdf)
 
 ## Current Working
 - Several Industrial Projects
 
 ## Research Interests
-- Stochastic Modeling and Optimization
 - Machine Learning and Deep Learning
 - Algorithms
+- Stochastic Modeling and Optimization
 - Data Mining and Analysis
 
 ## Study Activities
 
 ### Currently Self-learning / Enrolled in
-- COMP 5711 - Advanced Algorithm
 - [<font color=#06c>Deep Learning Specialization</font>](https://www.coursera.org/specializations/deep-learning) by Andrew Ng
 - [<font color=#06c>Introduction to Algorithms</font>](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein
 
@@ -35,6 +35,7 @@ comments:
 - Engineering Statistics
 - Stochastic Calculus
 - Convex Optimization
+- Advanced Algorithm
 
 ### Self-learned Books / Courses:
 - [<font color=#06c>Machine Learning in Action</font>](https://www.manning.com/books/machine-learning-in-action) by Alexandre Alves, Oracle Corporation

@@ -6,12 +6,12 @@ tags: [Python, Server, Maxwell]
 description:
 ---
 
-### Access to Maxwell
+### Access to Server (e.g., Pascal)
 
 Open terminal and use your account and password to log in the server, e.g.,
 
 ```
-$ ssh your_account_name@maxwell.ielm.ust.hk
+$ ssh your_account_name@pascal.ieda.ust.hk
 ```
 
 Then enter your password.
@@ -87,7 +87,7 @@ Save and exit.
 After above settings, you can start the notebook using the `jupyter notebook` command. Open your browser, e.g, `Safari`, go to
 	
 ```
-https://maxwell.ielm.ust.hk:<your port>
+https://pascal.ieda.ust.hk:<your port>
 ```
 
 It needs your password to enter (browser password created via SSL).
@@ -97,14 +97,20 @@ It needs your password to enter (browser password created via SSL).
 
 1. The default location of `mycert.pem` and `mykey.key` is in the home directory `~/`if you use the above seeting. Acturally, you can move them to other directory, e.g., `~/.jupyter/`, then edit the addresses of `certfile` and `keyfile` in configuration file (see above).
 
-2. In the above example, I used the port `9999`, this is mine port. You can choose one from `9991, 9993, 9996-9997`, these ones are available now.
-	* Ergang used `9998`, Halilun used `9995`, Qing used `9990`, Songxiang used `9994`, and I used `9992, 9999`.
+2. You can use `nohup` command if you still want to use the notebook on Maxwell after you close the notebook terminal window, e.g,
 
-3. You can use `nohup` command if you still want to use the notebook on Maxwell after you close the notebook terminal window, e.g,
+  ```	
+  $ nohup jupyter notebook > log &
+  ```
+  Adcanced:
+  ```	
+  $ nohup jupyter notebook > /dev/null 2>&1 &
+  ```
+  Note: you can also rename the config file, e.g., `myconfig.py`, then modify above nohup command as follows
+  ```	
+  $ nohup jupyter notebook --config=YOUR_PATH/myconfig.py > /dev/null 2>&1 &
+  ```
 
-	```	
-	$ nohup jupyter notebook > log &
-	```
-If you want to kill it later, use `kill $(pgrep jupyter)`.
+3. If you want to kill it later, use `kill $(pgrep jupyter)`. Or use commend `netstat -tulnp` to check the Jupyter process, then `kill -9 PID`.
 
-That's it, enjoy your notebook on Maxwell.
+That's it, enjoy your notebook on your server.

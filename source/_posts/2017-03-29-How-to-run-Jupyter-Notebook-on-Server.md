@@ -1,8 +1,8 @@
 ---
-title: How to run Jupyter Notebook on Maxwell
+title: How to run Jupyter Notebook on Server
 date: 2017-03-29 03:43:27
 categories: Technique
-tags: [Python, Server, Maxwell]
+tags: [Python, Server]
 description:
 ---
 

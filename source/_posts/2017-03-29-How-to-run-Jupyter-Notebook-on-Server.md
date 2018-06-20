@@ -108,7 +108,7 @@ It needs your password to enter (browser password created via SSL).
   ```
   Note: you can also rename the config file, e.g., `myconfig.py`, then modify above nohup command as follows
   ```	
-  $ nohup jupyter notebook --config=YOUR_PATH/myconfig.py > /dev/null 2>&1 &
+  $ nohup jupyter notebook --config=/home/kxie@HKUST/.jupyter/myconfig.py > /dev/null 2>&1 &
   ```
 
 3. If you want to kill it later, use `kill $(pgrep jupyter)`. Or use commend `netstat -tulnp` to check the Jupyter process, then `kill -9 PID`.

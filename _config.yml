@@ -4,12 +4,12 @@
 
 # Site
 title: Kun's Blog
-subtitle: 博士狗
+subtitle: 搬砖狗
 # description: As long as there is tomorrow, today is always the starting line.
 description: Stay Hungry, Stay Foolish
 author: Kun XIE
 avatar: /images/avatar.jif
-email: cnxiekun@gmail.com
+email: cnxiekun@163.com
 language: en
 # language: zh-Hans
 timezone: Asia/Shanghai
@@ -86,7 +86,7 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-plugins: 
+plugins:
   hexo-generator-feed
   hexo-generator-sitemap
   hexo-generator-baidu-sitemap
@@ -121,7 +121,7 @@ markdown:
   anchors:
     level: 2
     collisionSuffix: 'v'
-    permalink: false 
+    permalink: false
     permalinkClass: header-anchor
     permalinkSymbol: ¶
 
@@ -130,7 +130,7 @@ markdown:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: 
+  repository:
     github: git@github.com:cnxiekun/cnxiekun.github.io.git
     # coding: git@git.coding.net:cnxiekun/cnxiekun.git
   branch: master

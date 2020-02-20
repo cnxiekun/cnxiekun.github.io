@@ -143,7 +143,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/cnxiekun
-  Weibo: http://weibo.com/1740393132
+  # Weibo: http://weibo.com/1740393132
   Email: mailto:cnxiekun@gmail.com
   #LinkLabel: Link
   #Zhihu: Link
@@ -160,7 +160,7 @@ social_icons:
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   # Twitter: twitter
-  Weibo: weibo
+  # Weibo: weibo
   # Zhihu: battery-3
   Email: envelope-o
 
@@ -446,7 +446,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -553,7 +553,7 @@ vendors:
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
-  
+
   #three
   three:
   three_waves:

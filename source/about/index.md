@@ -8,7 +8,7 @@ comments:
 - 2018-present, research scientist at SF Technology
 - 2014-2018 Ph.D. [<font color=#06c>IEDA</font>](https://www.ieda.ust.hk/eng/index.php) at [<font color=#06c>HKUST</font>](http://www.ust.hk), supervised by Professor [<font color=#06c>Jiheng Zhang</font>](https://reijz.github.io/)
 - 2010-2014 B.Sc Mathematics at NJU
-- Email: <<font color=#5bc0de>cnxiekun@163.com</font>>, <<font color=#5bc0de>cnxiekun@gmail.com</font>>
+- Email: <font color=#5bc0de><cnxiekun@163.com></font>, <font color=#5bc0de><cnxiekun@gmail.com></font>
 
 
 ## Research Interests

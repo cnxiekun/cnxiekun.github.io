@@ -1,5 +1,5 @@
 ---
-title: About me
+title: About
 date: 2020-02-20 16:26:00
 comments:
 ---

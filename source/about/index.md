@@ -5,7 +5,7 @@ comments:
 ---
 
 ## Basic Information
-- 2018-present, data scientist at Tencent
+- 2020-present, data scientist at Tencent
 - 2018-2020, research scientist at SF Technology
 - 2014-2018 Ph.D. [<font color=#06c>IEDA</font>](https://www.ieda.ust.hk/eng/index.php) at [<font color=#06c>HKUST</font>](http://www.ust.hk), supervised by Professor [<font color=#06c>Jiheng Zhang</font>](https://reijz.github.io/)
 - 2010-2014 B.Sc Mathematics at NJU

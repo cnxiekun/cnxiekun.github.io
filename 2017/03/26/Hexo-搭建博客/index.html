@@ -1,38 +1,1224 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
 
 
-{% block title %} {{ page.title }} | {{ config.title }} {% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kun's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Hexo 集简洁大方美观与一体！ 必要的环境配置安装 homebrew打开 terminal，输入以下命令： 1$ ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;Homebrew&#x2F;homebrew&#x2F;go&#x2F;install)&quot;  安装 Node使用 homebrew 安装，brew install node 一键搞定。 node.js 安">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 搭建博客">
+<meta property="og:url" content="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="Kun&#39;s Blog">
+<meta property="og:description" content="Hexo 集简洁大方美观与一体！ 必要的环境配置安装 homebrew打开 terminal，输入以下命令： 1$ ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.github.com&#x2F;Homebrew&#x2F;homebrew&#x2F;go&#x2F;install)&quot;  安装 Node使用 homebrew 安装，brew install node 一键搞定。 node.js 安">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-03-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-07-12T07:17:24.783Z">
+<meta property="article:author" content="Kun XIE">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://cnxiekun.github.io/2017/03/26/Hexo-搭建博客/"/>
+
+
+
+
+
+  <title> Hexo 搭建博客 | Kun's Blog </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96296193-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2f520d888f817a8330fbc789d4fb8b82";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Kun's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">搬砖狗</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Kun's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Kun's Blog" src="/images/avatar.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo 搭建博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-26T00:00:00+08:00">
+                2017-03-26
+              </time>
+            
+
+            
+
+            
+
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; Updated on
+              <time itemprop="dateUpdated" datetime="2021-07-12T15:17:24+08:00" content="2021-07-12">
+                2021-07-12
+              </time>
+              </span>
+            
+         </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="leancloud_visitors" data-flag-title="Hexo 搭建博客">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+            
+
+          
+
+          
+ 
+         
+  <span class="post-letters-count">
+    &nbsp; | &nbsp;
+    <span>1.8k words</span>
+  </span>
+
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 集简洁大方美观与一体！</p>
+<h2 id="必要的环境配置"><a href="#必要的环境配置" class="headerlink" title="必要的环境配置"></a>必要的环境配置</h2><h3 id="安装-homebrew"><a href="#安装-homebrew" class="headerlink" title="安装 homebrew"></a>安装 <a target="_blank" rel="noopener" href="http://brew.sh/index_zh-cn.html">homebrew</a></h3><p>打开 terminal，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h3><p>使用 <a target="_blank" rel="noopener" href="http://brew.sh/index_zh-cn.html">homebrew</a> 安装，<code>brew install node</code> 一键搞定。</p>
+<p><code>node.js</code> 安装完成后，<code>npm</code> 也安装了。</p>
+<span id="more"></span>
+
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo brew install git</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-GitHub"><a href="#配置-GitHub" class="headerlink" title="配置 GitHub"></a>配置 <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></h3><p>使用 GitHub Page 搭建博客, 需要遵循一定的规则, 需要在 github 建立仓库,仓库名为 <code>username.github.io</code>, 更多详情请参考<a target="_blank" rel="noopener" href="https://pages.github.com/">官方文档</a>.</p>
+<p>我想大部分想用 Hexo 创建博客的人都会有吧，可以跳过这一步。</p>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></h3><ul>
+<li><p>安装</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir hexo <span class="comment"># 创建名为 hexo 的文件夹</span></span><br><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ npm install hexo --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署 Hexo：初始化</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 Hexo 插件：生成 sitemap，Rss，部署到 git 等</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-index --save</span><br><span class="line">$ npm install hexo-generator-archive --save</span><br><span class="line">$ npm install hexo-generator-category --save</span><br><span class="line">$ npm install hexo-generator-tag --save</span><br><span class="line">$ npm install hexo-server --save</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ npm install hexo-deployer-heroku --save</span><br><span class="line">$ npm install hexo-deployer-rsync --save</span><br><span class="line">$ npm install hexo-deployer-openshift --save</span><br><span class="line">$ npm install hexo-renderer-marked@0.2 --save</span><br><span class="line">$ npm install hexo-renderer-stylus@0.2 --save</span><br><span class="line">$ npm install hexo-generator-feed@1 --save</span><br><span class="line">$ npm install hexo-generator-sitemap@1 --save</span><br><span class="line"> $ npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="来-Hexo-吧"><a href="#来-Hexo-吧" class="headerlink" title="来 Hexo 吧"></a>来 Hexo 吧</h2><h3 id="创建新博文"><a href="#创建新博文" class="headerlink" title="创建新博文"></a>创建新博文</h3><p>执行 new 命令，生成制定名称的文章至 <code>hexo\source_posts\postName.md</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] <span class="string">&quot;postName&quot;</span> <span class="comment"># 新建文章</span></span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>layout</code> 是可选参数，默认值为 <code>post</code>。有哪些 <code>layout</code>呢，请到 <code>scaffolds</code>目录下查看，这些文件名称就是 <code>layout</code>名称。当然你可以添加自己的 <code>layout</code>，方法就是添加一个文件即可，同时你也可以编辑现有的 <code>layout</code>，比如 <code>post</code> 的 <code>layout</code>默认是<code>hexo\scaffolds\post.md</code>。</p>
+<p>可以修该默认的 <code>post</code> 格式，例如添加 <code>categories</code>/<code>description</code>，以避免每次手动输入，只需修改 <code>hexo\scaffolds\posts.md</code> 文件，如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">description:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息参考：<a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<p>接下来，你就可以用喜爱的编辑器尽情书写你的文章。</p>
+<p>对于文章摘要，在需要显示摘要的地方（Markdown 文件中）添加如下代码即可：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>more</code> 以上内容即是文章摘要，在主页显示，<code>more</code> 以下内容点击 <code>Read More</code> 链接打开全文才显示。</p>
+<h3 id="生成静态站点文件"><a href="#生成静态站点文件" class="headerlink" title="生成静态站点文件"></a>生成静态站点文件</h3><p>执行如下命令，生成静态页面至 <code>hexo\public\</code> 目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h3><p>执行如下命令，启动本地服务，进行文章预览调试。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>然后浏览器输入 <code>http://localhost:4000</code> 就可以看见效果。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="部署到-Git"><a href="#部署到-Git" class="headerlink" title="部署到 Git"></a>部署到 Git</h3><p>请注意这一步很重要：需要修改主目录（<code>hexo\</code>）下的 <code>_config.yml</code> 文件。</p>
+<p>添加如下内容：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">	type:</span> git</span><br><span class="line"><span class="symbol">	reposotory:</span> git:github.com:<span class="params">&lt;your github name&gt;</span>/<span class="params">&lt;your github name&gt;</span>.github.io.git</span><br><span class="line"><span class="symbol">	branch:</span> master</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是：每个 <code>:</code> 后面必须有一个空格！</p>
+<p>然后 terminal 输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://hexo.io/docs/deployment.html">Deployment</a></p>
+<h3 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h3><p>该博客采用 iissnan 的 <a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">Next</a> 主题，他的博客有详细的安装教程，有需要的朋友直接参考他写的教程，一气呵成!</p>
+<h4 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<h4 id="应用-Hexo-主题"><a href="#应用-Hexo-主题" class="headerlink" title="应用 Hexo 主题"></a>应用 Hexo 主题</h4><p>在 <code>hexo</code> 目录下找到 <code>_config.yml</code> 配置文件，找到 <code>theme</code> 字段，并将其值更改为<br><code>next</code>，如下所示：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">theme:</span> <span class="keyword">next</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h4><p><code>GitHub Pages</code> 自定义404页面非常容易，直接在 <code>themes\next\source</code>目录下创建自己的 <code>404.html</code> 就可以，内容自己写。</p>
+<h3 id="自定义页面"><a href="#自定义页面" class="headerlink" title="自定义页面"></a>自定义页面</h3><p>执行如下 <code>new page</code> 命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">&quot;about&quot;</span></span><br><span class="line">$ hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <code>hexo\source\</code> 下生成 <code>about</code> 和 <code>categories</code> 目录，里面均有个 <code>index.md</code> 文件。</p>
+<p>当然了，上述步骤也可以手动生成，效果完全等价。</p>
+<h3 id="其他设置"><a href="#其他设置" class="headerlink" title="其他设置"></a>其他设置</h3><p>请参考 <code>Next</code> 官方网站详细的说明文档：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用</a></li>
+<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/theme-settings.html">主题配置</a></li>
+<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/third-party-services.html">第三方服务</a></li>
+<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/tag-plugins.html">内建标签</a></li>
+<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/advanced-settings.html">进阶设定</a></li>
+<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/faqs.html">常见问题</a></li>
+</ul>
+<p>最后附上我的两个 <code>_config.yml</code> 配置文件，仅供参考。</p>
+<p>主目录下的 <code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo Configuration</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/configuration.html</span></span><br><span class="line"><span class="comment">## Source: https://github.com/hexojs/hexo/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Kun&#x27;s</span> <span class="string">Blog</span></span><br><span class="line"><span class="attr">subtitle:</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Stay</span> <span class="string">Hungry,</span> <span class="string">Stay</span> <span class="string">Foolish</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Kun</span> <span class="string">XIE</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/avatar.jif</span></span><br><span class="line"><span class="attr">email:</span> <span class="string">cnxiekun@gmail.com</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://yoursite.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://cnxiekun.github.io</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year-:month-:day-:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Comment</span></span><br><span class="line"><span class="comment"># disqus_shortname: cnxiekun</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">YYYY-MM-DD</span></span><br><span class="line"><span class="attr">time_format:</span> <span class="string">HH:mm:ss</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-abbr</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-footnote</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-ins</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sub</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">markdown-it-sup</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br><span class="line">    <span class="attr">permalink:</span> <span class="literal">false</span> </span><br><span class="line">    <span class="attr">permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="attr">permalinkSymbol:</span> <span class="string">¶</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> </span><br><span class="line">    <span class="attr">github:</span> <span class="string">git@github.com:cnxiekun/cnxiekun.github.io.git</span></span><br><span class="line">    <span class="attr">coding:</span> <span class="string">git@git.coding.net:cnxiekun/cnxiekun.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Next</code> 主题目录下的 <code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Site Information Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Put your favicon.ico into `hexo-site/source/` directory.</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">images/favicon.ico</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set default keywords (Use a comma to separate)</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">&quot;Hexo&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="comment"># Leave rss as empty to use site&#x27;s feed link.</span></span><br><span class="line"><span class="comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify the date when the site was setup</span></span><br><span class="line"><span class="attr">since:</span> <span class="number">2017</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Menu Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -&gt; archives)</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml</span></span><br><span class="line">  <span class="comment">#commonweal: /404.html</span></span><br><span class="line"></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Enable/Disable menu icons.</span></span><br><span class="line"><span class="comment"># Icon Mapping:</span></span><br><span class="line"><span class="comment">#   Map a menu item to a specific FontAwesome icon name.</span></span><br><span class="line"><span class="comment">#   Key is the name of menu item and value is the name of FontAwesome icon. Key is case-senstive.</span></span><br><span class="line"><span class="comment">#   When an question mask icon presenting up means that the item has no mapping icon.</span></span><br><span class="line"><span class="attr">menu_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">#KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">user</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">schedule:</span> <span class="string">calendar</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">archive</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">sitemap</span></span><br><span class="line">  <span class="attr">commonweal:</span> <span class="string">heartbeat</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Scheme Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment"># scheme: Muse</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Sidebar Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Social Links</span></span><br><span class="line"><span class="comment"># Key is the link label showing to end users.</span></span><br><span class="line"><span class="comment"># Value is the target link (E.g. GitHub: https://github.com/iissnan)</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/cnxiekun</span></span><br><span class="line">  <span class="attr">Weibo:</span> <span class="string">http://weibo.com/1740393132</span></span><br><span class="line">  <span class="comment">#LinkLabel: Link</span></span><br><span class="line">  <span class="comment">#Zhihu: Link</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Social Links Icons</span></span><br><span class="line"><span class="comment"># Icon Mapping:</span></span><br><span class="line"><span class="comment">#   Map a menu item to a specific FontAwesome icon name.</span></span><br><span class="line"><span class="comment">#   Key is the name of the item and value is the name of FontAwesome icon. Key is case-senstive.</span></span><br><span class="line"><span class="comment">#   When an globe mask icon presenting up means that the item has no mapping icon.</span></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Icon Mappings.</span></span><br><span class="line">  <span class="comment"># KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">github</span></span><br><span class="line">  <span class="comment"># Twitter: twitter</span></span><br><span class="line">  <span class="attr">Weibo:</span> <span class="string">weibo</span></span><br><span class="line">  <span class="comment"># Zhihu: battery-3</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="comment"># in theme directory(source/images): /images/avatar.jpg</span></span><br><span class="line"><span class="comment"># in site  directory(source/uploads): /uploads/avatar.jpg</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Table Of Contents in the Sidebar</span></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Automatically add list number to toc.</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="comment"># Sidebar Position, available value: left | right</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">left</span></span><br><span class="line">  <span class="comment">#position: right</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Sidebar Display, available value:</span></span><br><span class="line">  <span class="comment">#  - post    expand on posts automatically. Default.</span></span><br><span class="line">  <span class="comment">#  - always  expand for all pages automatically</span></span><br><span class="line">  <span class="comment">#  - hide    expand only when click on the sidebar toggle icon.</span></span><br><span class="line">  <span class="comment">#  - remove  Totally remove sidebar including sidebar toggle.</span></span><br><span class="line">  <span class="attr">display:</span> <span class="string">post</span></span><br><span class="line">  <span class="comment">#display: always</span></span><br><span class="line">  <span class="comment">#display: hide</span></span><br><span class="line">  <span class="comment">#display: remove</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Sidebar offset from top menubar in pixels.</span></span><br><span class="line">  <span class="attr">offset:</span> <span class="number">12</span></span><br><span class="line">  <span class="attr">offset_float:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Back to top in sidebar</span></span><br><span class="line">  <span class="attr">b2t:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">word_count:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Misc Theme Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Custom Logo.</span></span><br><span class="line"><span class="comment"># !!Only available for Default Scheme currently.</span></span><br><span class="line"><span class="comment"># Options:</span></span><br><span class="line"><span class="comment">#   enabled: [true/false] - Replace with specific image</span></span><br><span class="line"><span class="comment">#   image: url-of-image   - Images&#x27;s url</span></span><br><span class="line"><span class="attr">custom_logo:</span></span><br><span class="line">  <span class="attr">enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">image:</span> <span class="string">/images/Avatar.jpg</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Code Highlight theme</span></span><br><span class="line"><span class="comment"># Available value:</span></span><br><span class="line"><span class="comment">#    normal | night | night eighties | night blue | night bright</span></span><br><span class="line"><span class="comment"># https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line"><span class="attr">highlight_theme:</span> <span class="string">normal</span></span><br><span class="line"><span class="comment"># highlight_theme: night bright</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Third Party Services Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># MathJax Support</span></span><br><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">cdn:</span> <span class="string">//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#! ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment">#! DO NOT EDIT THE FOLLOWING SETTINGS</span></span><br><span class="line"><span class="comment">#! UNLESS YOU KNOW WHAT YOU ARE DOING</span></span><br><span class="line"><span class="comment">#! ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Motion</span></span><br><span class="line"><span class="attr">use_motion:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Fancybox</span></span><br><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Assets</span></span><br><span class="line"><span class="attr">css:</span> <span class="string">css</span></span><br><span class="line"><span class="attr">js:</span> <span class="string">js</span></span><br><span class="line"><span class="attr">images:</span> <span class="string">images</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Theme version</span></span><br><span class="line"><span class="attr">version:</span> <span class="number">5.1</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<p>我的 <code>Hexo</code> 源代码（包括 <code>Next</code> 主题）都托管在了 <a target="_blank" rel="noopener" href="https://github.com/cnxiekun/cnxiekun.github.io">GitHub</a>，欢迎 fork，仅需修改少量设置即可使用。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+
+<div class="page-footer">
+  
+      <div id="eof" class="print-invisible">
+        <hr class="eof">
+      </div>
+
+      <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span> &nbsp;<a href="/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Hexo 搭建博客</a></p>
+         <p><span>文章作者:</span> &nbsp;<a href="/" title="访问  的个人博客"></a></p>
+         <p><span>发布时间:</span> &nbsp;2017年03月26日 - 00时00分00秒</p>
+         <p><span>最后更新:</span> &nbsp;2021年07月12日 - 15时17分24秒</p>
+         <p><span>原始链接:</span> &nbsp;<a href="/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Hexo 搭建博客">https://cnxiekun.github.io/2017/03/26/Hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a></p>
+         <p><span>转载请保留以上信息。</span></p>
+      </div>
+    
+  </div>
+
+
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/27/Pandas-v-s-SFrame/" rel="prev" title="Pandas v.s. SFrame">
+                Pandas v.s. SFrame <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
-
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          
+          </div>
+          
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzkzNy80NTE0"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cnxiekun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:cnxiekun@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%85%E8%A6%81%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">必要的环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-homebrew"><span class="nav-number">1.1.</span> <span class="nav-text">安装 homebrew</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Node"><span class="nav-number">1.2.</span> <span class="nav-text">安装 Node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Git"><span class="nav-number">1.3.</span> <span class="nav-text">安装 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-GitHub"><span class="nav-number">1.4.</span> <span class="nav-text">配置 GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Hexo"><span class="nav-number">1.5.</span> <span class="nav-text">安装 Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%A5-Hexo-%E5%90%A7"><span class="nav-number">2.</span> <span class="nav-text">来 Hexo 吧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E5%8D%9A%E6%96%87"><span class="nav-number">2.1.</span> <span class="nav-text">创建新博文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">生成静态站点文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%90%AF%E5%8A%A8"><span class="nav-number">2.3.</span> <span class="nav-text">本地启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-Git"><span class="nav-number">2.4.</span> <span class="nav-text">部署到 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.5.</span> <span class="nav-text">主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98"><span class="nav-number">2.5.1.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8-Hexo-%E4%B8%BB%E9%A2%98"><span class="nav-number">2.5.2.</span> <span class="nav-text">应用 Hexo 主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#404%E9%A1%B5%E9%9D%A2"><span class="nav-number">2.5.3.</span> <span class="nav-text">404页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2"><span class="nav-number">2.6.</span> <span class="nav-text">自定义页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.7.</span> <span class="nav-text">其他设置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kun XIE</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">12.9k  words in total</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("IXMyI00IFXlKB52WfiEN5AHn-gzGzoHsz", "zlgQQpSX2pux66FQfj16Trnb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  	<!------ add fork me on github --------->
+       <!-- <a target="_blank" rel="noopener" href="https://github.com/cnxiekun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a> -->
+
+
+  <!-- 按需加载背景 -->
+  <!-- 识别手机或电脑的js开始 -->  
+  <!-- <script type="text/javascript"> -->
+  <!-- (function(){  
+    var res = GetRequest();  
+    var par = res['index'];  
+    if(par!='gfan'){  
+      var ua=navigator.userAgent.toLowerCase();  
+      var contains=function (a, b){  
+          if(a.indexOf(b)!=-1){return true;}  
+      };   
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js");
+      }
+    }  
+  })();  
+  function GetRequest() {  
+    var url = location.search;
+    var theRequest = new Object();  
+    if (url.indexOf("?") != -1) {  
+      var str = url.substr(1);  
+      strs = str.split("&");  
+      for(var i = 0; i < strs.length; i ++) {  
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);  
+      }  
+    }  
+    return theRequest;  
+  }   -->
+  <!-- </script> -->
+
+  <!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 背景动画 -->
+  <!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

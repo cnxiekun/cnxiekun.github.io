@@ -1,38 +1,1219 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
 
 
-{% block title %} {{ page.title }} | {{ config.title }} {% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Neucha:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="RF,GBDT,XGBoost," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Kun's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="集成学习（Ensemble Learning）是通过结合多个基学习器的预测结果来改善单个学习器的泛化能力和鲁棒性。 根据基学习器的生成方式，集成学习方法大致分为两类：  基学习器之间存在强依赖关系、必须串行生成 基学习器间不存在强依赖关系、可同时生成的并行化方法  前者的代表就是 Boosting (如 GBDT、XGBoost)，后者的代表是 Bagging (如 RF)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集成学习对比">
+<meta property="og:url" content="https://cnxiekun.github.io/2020/02/27/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AF%B9%E6%AF%94/index.html">
+<meta property="og:site_name" content="Kun&#39;s Blog">
+<meta property="og:description" content="集成学习（Ensemble Learning）是通过结合多个基学习器的预测结果来改善单个学习器的泛化能力和鲁棒性。 根据基学习器的生成方式，集成学习方法大致分为两类：  基学习器之间存在强依赖关系、必须串行生成 基学习器间不存在强依赖关系、可同时生成的并行化方法  前者的代表就是 Boosting (如 GBDT、XGBoost)，后者的代表是 Bagging (如 RF)。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-27T07:07:11.000Z">
+<meta property="article:modified_time" content="2021-07-12T07:17:24.804Z">
+<meta property="article:author" content="Kun XIE">
+<meta property="article:tag" content="RF">
+<meta property="article:tag" content="GBDT">
+<meta property="article:tag" content="XGBoost">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://cnxiekun.github.io/2020/02/27/集成学习对比/"/>
+
+
+
+
+
+  <title> 集成学习对比 | Kun's Blog </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96296193-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2f520d888f817a8330fbc789d4fb8b82";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Kun's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">搬砖狗</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://cnxiekun.github.io/2020/02/27/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AF%B9%E6%AF%94/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Kun's Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Kun's Blog" src="/images/avatar.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                集成学习对比
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-27T15:07:11+08:00">
+                2020-02-27
+              </time>
+            
+
+            
+
+            
+
+            
+              <span class="post-updated">
+              &nbsp; | &nbsp; Updated on
+              <time itemprop="dateUpdated" datetime="2021-07-12T15:17:24+08:00" content="2021-07-12">
+                2021-07-12
+              </time>
+              </span>
+            
+         </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2020/02/27/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AF%B9%E6%AF%94/" class="leancloud_visitors" data-flag-title="集成学习对比">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+            
+
+          
+
+          
+ 
+         
+  <span class="post-letters-count">
+    &nbsp; | &nbsp;
+    <span>1.6k words</span>
+  </span>
+
+
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>集成学习（Ensemble Learning）是通过结合多个基学习器的预测结果来改善单个学习器的泛化能力和鲁棒性。</strong></p>
+<p>根据基学习器的生成方式，集成学习方法大致分为两类：</p>
+<ol>
+<li>基学习器之间存在强依赖关系、必须串行生成</li>
+<li>基学习器间不存在强依赖关系、可同时生成的并行化方法</li>
+</ol>
+<p>前者的代表就是 Boosting (如 <code>GBDT</code>、<code>XGBoost</code>)，后者的代表是 Bagging (如 <code>RF</code>)。</p>
+<span id="more"></span>
+
+<h2 id="RF"><a href="#RF" class="headerlink" title="RF"></a>RF</h2><p>Bagging 可以简单的理解为：样本放回抽样，多数表决（分类）或简单平均（回归），同时Bagging的基学习器之间属于并列生成，不存在强依赖关系。</p>
+<p>RF (Random Forest，随机森林) 是 Bagging 的扩展变体，以决策树为基学习器，且在决策树的训练过程中引入了随机特征选择，因此 RF 可以概括为以下四个部分：</p>
+<ol>
+<li>样本放回抽样</li>
+<li>特征随机选择</li>
+<li>构建决策树</li>
+<li>随机森林投票/平均</li>
+</ol>
+<p>特征随机选择是指在决策树的构建中，会从样本集的特征集合中随机选择部分特征，然后再从这个子集中选择最优的属性用于划分，这种随机性导致随机森林的偏差会有稍微的增加，但是由于随机森林的“平均”特性，会使得它的方差减小，而且方差的减小补偿了偏差的增大，因此总体而言是更好的模型。</p>
+<p>RF 重要特点：</p>
+<ol>
+<li>每棵决策树都最大可能的进行生长而不进行剪枝</li>
+<li>不用交叉验证或者使用一个独立的测试集获得无偏估计，RF 可以在内部进行评估——每个基学习器只使用了训练集中约63.2%的样本，剩下约36.8% ($1/e$)的样本可用做验证集来对其泛化性能进行“包外估计” (out-of-bag)</li>
+</ol>
+<p>RF 优缺点：</p>
+<ol>
+<li>优点：<ul>
+<li>在数据集上表现较好（训练速度、预测准确率）</li>
+<li>能够处理很高维的数据，并且不用特征选择，能给出特征的重要性</li>
+<li>易并行训练</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>在噪声较大的分类或者回归问题上易过拟合</li>
+</ul>
+</li>
+</ol>
+<h2 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h2><p>Boosting 是一种与 Bagging 类似的技术，但 Boosting 是通过关注被已有分类器错分的那些数据来获得新的分类器——串行生成基分类器。Boosting 分类的结果是基于所有分类器的加权求和，每个分类器权重并不相等，每个权重代表对应的分类器在上一轮迭代中的成功度，而 Bagging 中的分类器权值是一样的。</p>
+<p>GBDT (Gradient Boosting Decision Tree, 梯度提升树) 与传统的 Boosting 区别较大，它的每一次计算都是为了减少上一次的残差。为了消除残差，在残差减小的梯度方向上建立模型，每个新的模型的建立是为了使得之前的模型的残差往梯度下降的方法，与传统的 Boosting 中关注正确错误的样本加权有着很大的区别。</p>
+<p>在 GradientBoosting 算法中，利用损失函数的负梯度方向在当前模型的值作为残差的近似值，进而拟合一棵 CART 回归树。GBDT 的会累加所有树的结果，而这种累加是无法通过分类完成的，因此 GBDT 的树都是 CART 回归树，而不是分类树。</p>
+<p>GBDT 优缺点（与RF有点类似）：</p>
+<ol>
+<li>优点：<ul>
+<li>性能在 RF 的基础上“有一定提升”</li>
+<li>能灵活的处理各种类型的数据</li>
+<li>在相对较少的调参时间下，预测的准确度较高</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>基学习器之前存在串行关系，难以并行训练</li>
+</ul>
+</li>
+</ol>
+<h2 id="XGBoost"><a href="#XGBoost" class="headerlink" title="XGBoost"></a>XGBoost</h2><p>XGBoost 的性能在 GBDT 上又有一步提升，毕竟比赛神器。XGBoost 能够自动地运用 CPU 的多线程进行并行计算，同时在算法精度上也进行了精度的提高。</p>
+<p>由于 GBDT 在合理的参数设置下，往往要生成一定数量的树才能达到令人满意的准确率，在数据集较复杂时，模型可能需要几千次迭代运算。但是 XGBoost 利用并行的 CPU 更好的解决了这个问题。</p>
+<h2 id="GBDT-与-XGBoost区别"><a href="#GBDT-与-XGBoost区别" class="headerlink" title="GBDT 与 XGBoost区别"></a>GBDT 与 XGBoost区别</h2><ol>
+<li><strong>基学习器:</strong> 传统的 GBDT 以 CART 树作为基学习器，XGBoost 还支持线性分类器，这个时候XGBoost相当于 L1 和 L2 正则化的 Logistics Regression（分类）或者 Linear Regression（回归）</li>
+<li><strong>导数信息:</strong> 传统的 GBDT 在优化的时候只用到一阶导数信息，XGBoost 则对代价函数进行了二阶泰勒展开，得到一阶和二阶导数</li>
+<li><strong>正则项:</strong> XGBoost 在代价函数中加入了正则项，用于控制模型的复杂度。从权衡方差偏差来看，它降低了模型的方差，使学习出来的模型更加简单，防止过拟合，这也是 XGBoost 优于传统 GBDT 的一个特性</li>
+<li><strong>列抽样:</strong> XGBoost 借鉴了随机森林的做法，支持列抽样，不仅防止过拟合，还能减少计算</li>
+<li><strong>缺失值处理:</strong> 对于特征的值有缺失的样本，XGBoost 可以自动学习出它的分裂方向</li>
+<li><strong>并行:</strong> XGBoost的并行不是 tree 粒度的并行，XGBoost 也是一次迭代完才能进行下一次迭代的。XGBoost 的并行是在<code>特征粒度</code>上的。决策树的学习最耗时的一个步骤就是对特征的值进行排序——要确定最佳分割点，XGBoost 在训练之前，预先对数据进行了排序，然后保存为 block 结构，后面的迭代中重复地使用这个结构，大大减小计算量。这个 block 结构也使得并行成为了可能，在进行节点的分裂时，需要计算每个特征的增益，最终选增益最大的那个特征去做分裂，那么各个特征的增益计算就可以开多线程进行</li>
+</ol>
+<p><strong>Remark:</strong> 相关面试问答可以参考：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014465639/article/details/73912614">N问GBDT</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34679467">RF、GBDT、XGBoost常见面试题整理</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+  
+        <div class="post-tags">
+          
+            <a href="/tags/RF/" rel="tag"># RF</a>
+          
+            <a href="/tags/GBDT/" rel="tag"># GBDT</a>
+          
+            <a href="/tags/XGBoost/" rel="tag"># XGBoost</a>
+          
+        </div>
+      
+
+
+<div class="page-footer">
+  
+      <div id="eof" class="print-invisible">
+        <hr class="eof">
+      </div>
+
+      <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span> &nbsp;<a href="/2020/02/27/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AF%B9%E6%AF%94/">集成学习对比</a></p>
+         <p><span>文章作者:</span> &nbsp;<a href="/" title="访问  的个人博客"></a></p>
+         <p><span>发布时间:</span> &nbsp;2020年02月27日 - 15时07分11秒</p>
+         <p><span>最后更新:</span> &nbsp;2021年07月12日 - 15时17分24秒</p>
+         <p><span>原始链接:</span> &nbsp;<a href="/2020/02/27/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AF%B9%E6%AF%94/" title="集成学习对比">https://cnxiekun.github.io/2020/02/27/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E5%AF%B9%E6%AF%94/</a></p>
+         <p><span>转载请保留以上信息。</span></p>
+      </div>
+    
+  </div>
+
+
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+         
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/26/%E9%93%BE%E8%A1%A8/" rel="next" title="链表">
+                <i class="fa fa-chevron-left"></i> 链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/11/%E6%A0%88/" rel="prev" title="栈">
+                栈 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
-
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          
+          </div>
+          
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yNzkzNy80NTE0"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/cnxiekun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:cnxiekun@163.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RF"><span class="nav-number">1.</span> <span class="nav-text">RF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT"><span class="nav-number">2.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGBoost"><span class="nav-number">3.</span> <span class="nav-text">XGBoost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT-%E4%B8%8E-XGBoost%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">GBDT 与 XGBoost区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kun XIE</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow noopener">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">12.9k  words in total</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("IXMyI00IFXlKB52WfiEN5AHn-gzGzoHsz", "zlgQQpSX2pux66FQfj16Trnb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  	<!------ add fork me on github --------->
+       <!-- <a target="_blank" rel="noopener" href="https://github.com/cnxiekun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a> -->
+
+
+  <!-- 按需加载背景 -->
+  <!-- 识别手机或电脑的js开始 -->  
+  <!-- <script type="text/javascript"> -->
+  <!-- (function(){  
+    var res = GetRequest();  
+    var par = res['index'];  
+    if(par!='gfan'){  
+      var ua=navigator.userAgent.toLowerCase();  
+      var contains=function (a, b){  
+          if(a.indexOf(b)!=-1){return true;}  
+      };   
+      if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla"))||(contains(ua,"android") && contains(ua,"opera"))||contains(ua,"ucweb7")||contains(ua,"iphone")){
+        return false;
+      } else {
+        $.getScript("/js/src/particle.js");
+      }
+    }  
+  })();  
+  function GetRequest() {  
+    var url = location.search;
+    var theRequest = new Object();  
+    if (url.indexOf("?") != -1) {  
+      var str = url.substr(1);  
+      strs = str.split("&");  
+      for(var i = 0; i < strs.length; i ++) {  
+        theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);  
+      }  
+    }  
+    return theRequest;  
+  }   -->
+  <!-- </script> -->
+
+  <!-- 识别手机或电脑的js结束 -->  
+
+  <!-- 背景动画 -->
+  <!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
